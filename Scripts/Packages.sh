@@ -18,7 +18,7 @@ UPDATE_PACKAGE() {
 	elif [[ $PKG_SPECIAL == "name" ]]; then
 		mv -f $REPO_NAME $PKG_NAME
 	fi
-        rm -rf $(find ./feeds/luci/ -type d -iregex ".*\(samba4\).*")
+        rm -rf $(find ./feeds/luci/ -type d -iregex ".*\(samba4\|luci-app-samba4\).*")
 }
 
 UPDATE_PACKAGE "design" "gngpp/luci-theme-design" "$([[ $WRT_URL == *"lede"* ]] && echo "main" || echo "js")"
