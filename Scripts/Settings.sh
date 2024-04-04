@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rm -rf $(find ./feeds/luci/ -type d -iregex ".*\(uugamebooster\|upnp\).*")
-#find . -name "Makefile" -exec sed -i '/luci-app-samba4/d' {} +
+find . -name "Makefile" -exec sed -i '/luci-app-samba4/d' {} +
 #修改默认主题
 sed -i "s/luci-theme-bootstrap/luci-theme-$WRT_THEME/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
 
