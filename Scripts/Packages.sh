@@ -9,7 +9,6 @@ UPDATE_PACKAGE() {
 	local REPO_NAME=$(echo $PKG_REPO | cut -d '/' -f 2)
 
 	rm -rf $(find ../feeds/luci/ -type d -iname "*$PKG_NAME*" -prune)
-        rm -rf $(find ../feeds/luci/ -type d -iname "*samba4*" -prune)
 	
 	git clone --depth=1 --single-branch --branch $PKG_BRANCH "https://github.com/$PKG_REPO.git"
 
